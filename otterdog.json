@@ -1,0 +1,40 @@
+{
+  "defaults": {
+    "base_url": "https://otterdog-staging.eclipse.org",
+    "credentials": {
+      "provider": "pass"
+    },
+    "github": {
+      "config_repo": ".eclipsefdn",
+      "exclude_teams": [
+        ".*-project-leads",
+        ".*-committers",
+        ".*-contributors",
+        ".*(?<!eclipsefdn)-security"
+      ]
+    },
+    "bitwarden": {
+      "api_token_key": "api_token_admin"
+    },
+    "pass": {
+      "username_pattern": "bots/{0}/github.com/username",
+      "password_pattern": "bots/{0}/github.com/password",
+      "twofa_seed_pattern": "bots/{0}/github.com/2FA-seed",
+      "api_token_pattern": "bots/{0}/github.com/otterdog-token"
+    },
+    "jsonnet": {
+      "base_template": "https://github.com/EclipseFdn/otterdog-defaults#otterdog-defaults.libsonnet@main",
+      "config_dir": "orgs"
+    }
+  },
+  "organizations": [
+    {
+      "name": "OtterdogTest",
+      "github_id": "OtterdogTest",
+      "credentials": {
+        "provider": "bitwarden",
+        "item_id" : "118276ad-158c-4720-b68d-af8c00fe3481"
+      }
+    }
+  ]
+}
